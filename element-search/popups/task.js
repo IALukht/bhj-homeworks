@@ -1,23 +1,18 @@
-(() => {
-    const windowOne = document.getElementById("modal_main");
-    windowOne.classList.add("modal_active");
-})();
+const modalMain = document.getElementById("modal_main");
+modalMain.classList.add("modal_active");
 
-(() => {
-    const windowOne = document.getElementsByClassName("modal__close");
-    for (var i = 0; i < windowOne.length; i++) {
-        windowOne[i].addEventListener("click", function () {
-            this.parentElement.parentElement.classList.remove("modal_active");
-        });
-    }
-})();
+const modalClosed = document.getElementsByClassName("modal__close");
+        
+for (let i = 0; i < modalClosed.length; i++) {
+    modalClosed[i].addEventListener("click", function () {
+        this.parentElement.parentElement.classList.remove("modal_active");
+    });
+}
 
-(() => {
-    const windowOne = document.getElementsByClassName("show-success");
-    for (var i = 0; i < windowOne.length; i++) {
-        windowOne[i].addEventListener("click", function () {
-            const windowTwo = document.getElementById("modal_success");
-            windowTwo.classList.add("modal_active");
-        });
-    }
-})();
+const showSuccess = document.getElementsByClassName("show-success");
+for (let i = 0; i < showSuccess.length; i++) {
+    showSuccess[i].addEventListener("click", function () {
+        const windowTwo = document.getElementById("modal_success");
+        windowTwo.classList.add("modal_active");
+    });
+}

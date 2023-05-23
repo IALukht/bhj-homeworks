@@ -18,7 +18,7 @@ tooltips.forEach(el => {
             tooltip.classList.add('tooltip', 'tooltip_active');
             tooltip.insertAdjacentText("afterBegin",`${title}`);
             tooltip.setAttribute('style',`left: ${left}; top: ${top}`);
-            thisTarget.insertAdjacentElement("afterBegin", tooltip);
+            thisTarget.insertAdjacentElement("afterEnd", tooltip);
         } else {
             tooltipActive.remove();
         }

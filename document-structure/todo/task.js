@@ -5,7 +5,7 @@ const input = document.getElementById("task__input");
 button.addEventListener("click", function(event) {
     event.preventDefault();
     let tasksDiv = document.createElement("div"); 
-    if (input.value != "") {
+    if (input.value.trim()) {
          tasksDiv.classList.add("task");
          tasksDiv.insertAdjacentHTML('beforeend', `
             <div class="task__title">

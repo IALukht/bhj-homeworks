@@ -20,7 +20,6 @@ function showOut() {
    signOut.addEventListener("click", () => {
       welcome[0].classList.remove("welcome_active");
       signin.classList.add("signin_active");
-      // signOut.style.display = "none";
       signinForm.reset();
       delete localStorage.user_id;
    })
@@ -35,8 +34,6 @@ if (localStorage.user_id) {
       const formData = new FormData(signinForm);
       xhr.open("POST", url);
       xhr.send(formData);
-      // const response = JSON.parse(xhr.responseText);
-      // console.log(response)
       xhr.responseType = "json";
       xhr.addEventListener("load", () => {
          if (xhr.response.success) {

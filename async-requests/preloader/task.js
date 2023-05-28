@@ -8,10 +8,10 @@ request.setRequestHeader("Content-Type", "application/json");
 request.responseType ="json";
 request.send();
 
-request.addEventListener("readystatechange", () => {
-    if (request.readyState === 4) {
-        Object.values(request.response.response.Valute).forEach(element => {
-            items.insertAdjacentHTML("beforeend", 
+request.addEventListener("load", () => {
+    
+    Object.values(request.response.response.Valute).forEach(element => {
+        items.insertAdjacentHTML("beforeend", 
             `<div class="item__code">
                 ${element.CharCode}
             </div>
@@ -21,8 +21,8 @@ request.addEventListener("readystatechange", () => {
              <div class="item__currency">
                 руб.
             </div>
-            `)
-        });
-        loader.classList.remove("loader_active");
-    }
-});
+        `)
+    });
+loader.classList.remove("loader_active");
+}
+);

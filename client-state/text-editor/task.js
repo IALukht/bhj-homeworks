@@ -3,15 +3,15 @@ const body = document.getElementsByTagName("body");
 const button = document.createElement("button");
 
 editor.addEventListener("input", () => {
-   if (editor.value != "") {
-      localStorage.value = editor.value;
-    }
-})
+   localStorage.getItem(editor.value != ""); 
+   localStorage.value = editor.value;
+   }
+)
+
 editor.addEventListener("click", () => {
    if (Array.from(document.getElementsByClassName("task__remove"))[0]) {
       return;
-   }
-   else {
+   } else {
       button.className = "task__remove";
       button.textContent = "Очистить содержимое";
       body[0].appendChild(button);
@@ -20,7 +20,7 @@ editor.addEventListener("click", () => {
 
 button.addEventListener("click", () => {
    editor.value = "";
-   localStorage.clear();
+   localStorage.removeItem();
 })
 
 if (localStorage.length > 0) {
